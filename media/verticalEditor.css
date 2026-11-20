@@ -1,0 +1,80 @@
+.editor-toolbar {
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px;
+	padding: 0 0 10px;
+	background: var(--vscode-editor-background);
+}
+
+button {
+	padding: 4px 8px;
+	color: var(--vscode-button-foreground);
+	background: var(--vscode-button-background);
+	border: 1px solid var(--vscode-button-border, transparent);
+}
+
+main {
+	user-select: none;
+	cursor: text;
+}
+
+.column {
+	min-height: var(--cell);
+}
+
+.column span.selected {
+	background: #9bc8f6;
+}
+
+#typing, #caret, #composition {
+	position: absolute;
+	box-sizing: border-box;
+	z-index: 1;
+}
+
+#typing, #composition {
+	font-family: var(--manuscript-font);
+	line-height: 1;
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+}
+
+#typing {
+	top: 0;
+	left: 0;
+	width: 24px;
+	height: 30px;
+	padding: 0;
+	border: 0;
+	opacity: .01;
+	resize: none;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+#caret, #composition {
+	pointer-events: none;
+}
+
+#caret {
+	height: 2px;
+	background: #171717;
+}
+
+#composition {
+	max-height: 8em;
+	white-space: pre-wrap;
+	background: #fff;
+	color: #171717;
+	border-inline-end: 1px solid #488aca;
+}
+
+#draft {
+	display: block;
+	width: min(100%, 34rem);
+	margin: 6px 0;
+}

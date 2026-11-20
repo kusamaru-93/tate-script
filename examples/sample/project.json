@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "title": "タイトル",
+  "author": "著者名",
+  "page": {
+    "charactersPerLine": 20,
+    "linesPerPage": 20,
+    "paperSize": "A4"
+  }
+}

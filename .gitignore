@@ -1,0 +1,14 @@
+# インストールした依存ライブラリと生成物
+/node_modules/
+/out/
+/dist/
+/.vscode-test/
+*.vsix
+*.tsbuildinfo
+
+# 非公開の内部資料
+/docs/
+
+# ログと初期テンプレートの開発ガイド
+*.log
+/vsc-extension-quickstart.md

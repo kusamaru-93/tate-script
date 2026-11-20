@@ -1,0 +1,35 @@
+body {
+	margin: 0;
+	background: var(--vscode-editor-background);
+	color: var(--vscode-editor-foreground);
+}
+
+header {
+	position: sticky;
+	top: 0;
+	padding: 12px 16px;
+	background: var(--vscode-editor-background);
+	border-bottom: 1px solid var(--vscode-panel-border);
+}
+
+button {
+	margin-inline-end: 12px;
+	padding: 5px 10px;
+	border: 1px solid var(--vscode-button-border, transparent);
+	background: var(--vscode-button-background);
+	color: var(--vscode-button-foreground);
+}
+
+main {
+	display: grid;
+	justify-items: center;
+	gap: 16px;
+	padding: 16px;
+}
+
+canvas {
+	display: block;
+	width: min(100%, 1000px);
+	height: auto;
+	background: white;
+}

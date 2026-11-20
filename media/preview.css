@@ -1,0 +1,57 @@
+body {
+	--manuscript-font: "Yu Mincho", "MS Mincho", serif;
+	margin: 0;
+	padding: 16px;
+	background: var(--vscode-editor-background, #eee);
+}
+
+main {
+	display: grid;
+	min-width: 308px;
+	justify-items: center;
+	gap: 20px;
+}
+
+.page {
+	position: relative;
+	container-type: inline-size;
+	width: min(100%, 760px);
+	background: white;
+	color: #171717;
+	box-shadow: 0 1px 5px #0003;
+}
+
+.columns {
+	position: absolute;
+	inset-block-start: var(--top);
+	inset-inline-end: var(--right);
+	display: flex;
+	flex-direction: row-reverse;
+	font-family: var(--manuscript-font);
+	font-size: var(--font);
+}
+
+.column {
+	box-sizing: border-box;
+	flex: 0 0 var(--line);
+	width: var(--line);
+}
+
+.indent-1 {
+	padding-top: var(--cell);
+}
+
+.indent-3 {
+	padding-top: calc(3 * var(--cell));
+}
+
+.column span {
+	display: grid;
+	place-items: center;
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	white-space: pre;
+	line-height: 1;
+	width: var(--line);
+	height: var(--cell);
+}

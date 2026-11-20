@@ -1,0 +1,114 @@
+{
+  "name": "tate-script",
+  "displayName": "TateScript",
+  "description": "日本語の脚本・シナリオを縦書きで執筆し、PDF出力できる拡張機能",
+  "version": "0.1.0",
+  "publisher": "kusamaru-93",
+  "keywords": [
+    "縦書き",
+    "脚本",
+    "シナリオ",
+    "映画脚本",
+    "PDF"
+  ],
+  "icon": "images/icon.png",
+  "author": "kusamaru",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kusamaru-93/tate-script.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kusamaru-93/tate-script/issues"
+  },
+  "engines": {
+    "vscode": "^1.146.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "tate-script.newProject",
+        "title": "新しい作品を作成",
+        "category": "Tate Script"
+      },
+      {
+        "command": "tate-script.openVerticalPreview",
+        "title": "縦書きプレビューを開く",
+        "category": "Tate Script"
+      },
+      {
+        "command": "tate-script.previewPdf",
+        "title": "PDFをプレビュー",
+        "category": "Tate Script"
+      },
+      {
+        "command": "tate-script.exportPdf",
+        "title": "PDFを出力",
+        "category": "Tate Script"
+      },
+      {
+        "command": "tate-script.insertPageBreak",
+        "title": "手動改ページを挿入",
+        "category": "Tate Script"
+      },
+      {
+        "command": "tate-script.openVerticalEditor",
+        "title": "縦書きエディタを開く",
+        "category": "Tate Script"
+      },
+      {
+        "command": "tate-script.openProjectSettings",
+        "title": "作品設定を開く",
+        "category": "Tate Script"
+      }
+    ],
+    "customEditors": [
+      {
+        "viewType": "tate-script.verticalEditor",
+        "displayName": "Tate Script 縦書きエディタ",
+        "selector": [{ "filenamePattern": "**/screenplay.txt" }],
+        "priority": "option"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "@types/vscode": "^1.146.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0",
+    "esbuild": "^0.28.1",
+    "eslint": "^10.5.0",
+    "npm-run-all": "^4.1.5",
+    "pdfjs-dist": "^6.5.438",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1",
+    "playwright-core": "^1.65.1"
+  }
+}

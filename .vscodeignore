@@ -1,0 +1,30 @@
+# 開発用ファイルと内部資料
+.git/**
+.github/**
+.vscode/**
+.vscode-test/**
+src/**
+out/**
+docs/**
+examples/**
+
+# ビルド・テスト設定とパッケージの管理ファイル
+.gitignore
+.vscodeignore
+.vscode-test.mjs
+esbuild.js
+eslint.config.mjs
+tsconfig.json
+package-lock.json
+vsc-extension-quickstart.md
+
+# ビルド時に使用する入力ファイルと、現在の実行処理が参照しない旧生成物
+media/pdfPreview.js
+dist/pdfjs/pdf.mjs
+
+# デバッグ情報と生成済みの配布物
+**/*.map
+**/*.ts
+**/*.tsbuildinfo
+**/*.log
+*.vsix
